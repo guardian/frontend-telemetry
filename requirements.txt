@@ -1,0 +1,9 @@
+argparse==1.2.1
+bcdoc==0.12.2
+boto3==0.0.8
+botocore==0.87.0
+docutils==0.12
+jmespath==0.6.1
+python-dateutil==2.4.0
+six==1.9.0
+wsgiref==0.1.2

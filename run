@@ -1,0 +1,13 @@
+#!/bin/bash
+
+timestamp=$(date +"%Y-%m-%dT%H:%M")
+
+tests=( FrontsAll ContentAll )
+
+for test in "${tests[@]}"
+do
+  echo "run $test"
+  gu/run.py run gu.$test --browser=system --use-live-sites --output-format=json --output-dir=$(pwd)/results/$timestamp/$test
+done
+
+python upload.py $timestamp
