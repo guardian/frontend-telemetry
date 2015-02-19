@@ -2,3 +2,4 @@
 telemetry
 *.log
 results
+*.pyc
