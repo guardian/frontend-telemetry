@@ -1,0 +1,20 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), 'telemetry', 'src', 'tools', 'telemetry'))
+sys.path.append(os.path.join(os.path.dirname(__file__), 'telemetry', 'src', 'tools', 'perf'))
+
+from telemetry import benchmark_runner
+
+
+if __name__ == '__main__':
+  top_level_dir = os.path.dirname(__file__)
+
+  print(top_level_dir)
+
+  config = benchmark_runner.ProjectConfig(
+      top_level_dir=top_level_dir,
+      benchmark_dirs=[os.path.join(os.path.dirname(__file__), 'src')])
+  sys.exit(benchmark_runner.main(config))
